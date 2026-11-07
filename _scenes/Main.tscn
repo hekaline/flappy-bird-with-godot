@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b56qy618ex56u"]
+
+[ext_resource type="Script" uid="uid://bhsejb4ypc0pq" path="res://_scripts/player.gd" id="1_mka2t"]
+[ext_resource type="Script" uid="uid://8qyrbcrgpxa4" path="res://_scripts/spawner.gd" id="2_n2dxt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mks8r"]
+size = Vector2(70, 70)
+
+[node name="Main" type="Node2D" unique_id=1504051468]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1676010392]
+position = Vector2(300, 540)
+script = ExtResource("1_mka2t")
+
+[node name="ColorRect" type="ColorRect" parent="Player" unique_id=1325177990]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1296176082]
+shape = SubResource("RectangleShape2D_mks8r")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=800772084]
+position = Vector2(2000, 543)
+script = ExtResource("2_n2dxt")

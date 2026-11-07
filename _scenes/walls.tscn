@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://8pqqi3qamtib"]
+
+[ext_resource type="Script" uid="uid://n4xe1ytld00g" path="res://_scripts/walls.gd" id="1_gj5xe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxlqr"]
+size = Vector2(40, 1000)
+
+[sub_resource type="Gradient" id="Gradient_4troc"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sed3d"]
+gradient = SubResource("Gradient_4troc")
+width = 40
+height = 1000
+
+[node name="Walls" type="Node2D" unique_id=1510278000]
+script = ExtResource("1_gj5xe")
+
+[node name="TopWall" type="Area2D" parent="." unique_id=1406562136]
+position = Vector2(0, -200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" unique_id=564576927]
+position = Vector2(0, -500)
+shape = SubResource("RectangleShape2D_mxlqr")
+
+[node name="Sprite2D" type="Sprite2D" parent="TopWall" unique_id=303332879]
+texture = SubResource("GradientTexture2D_sed3d")
+centered = false
+offset = Vector2(-20, -1000)
+
+[node name="BottomWall" type="Area2D" parent="." unique_id=1056491670]
+position = Vector2(0, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall" unique_id=2038502905]
+position = Vector2(0, 500)
+shape = SubResource("RectangleShape2D_mxlqr")
+
+[node name="Sprite2D" type="Sprite2D" parent="BottomWall" unique_id=2085008510]
+texture = SubResource("GradientTexture2D_sed3d")
+centered = false
+offset = Vector2(-20, 0)
